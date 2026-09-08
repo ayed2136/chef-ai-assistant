@@ -247,7 +247,7 @@ function ChefApp() {
                   ) : (
                     <div key={m.id} className="flex gap-3">
                       <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-secondary text-secondary-foreground">
-                        <i className="fa-solid fa-hat-chef fa-solid fa-utensils text-xs" aria-hidden="true" />
+                        <i className="fa-solid fa-utensils text-xs" aria-hidden="true" />
                       </span>
                       <div className="whitespace-pre-wrap text-sm leading-relaxed text-foreground">
                         {m.content}
