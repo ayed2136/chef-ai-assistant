@@ -28,6 +28,7 @@ export const askChef = createServerFn({ method: "POST" })
   .inputValidator(validate)
   .handler(async ({ data }): Promise<{ ok: boolean; reply: string; reason?: string }> => {
     const key = process.env["GROQ_API_KEY"];
+    console.log("chef: key present?", Boolean(key));
     if (!key) {
       return { ok: false, reply: "", reason: "missing_key" };
     }
@@ -61,6 +62,7 @@ export const askChef = createServerFn({ method: "POST" })
         const status = res.status;
         const reason =
           status === 401 ? "auth" : status === 429 ? "rate_limit" : status >= 500 ? "upstream" : "request";
+        console.log("chef: groq error", status, (await res.text()).slice(0, 300));
         return { ok: false, reply: "", reason };
       }
 
@@ -70,7 +72,8 @@ export const askChef = createServerFn({ method: "POST" })
       const reply = json.choices?.[0]?.message?.content?.trim() ?? "";
       if (!reply) return { ok: false, reply: "", reason: "empty" };
       return { ok: true, reply };
-    } catch {
+    } catch (e) {
+      console.log("chef: network error", String(e).slice(0, 300));
       return { ok: false, reply: "", reason: "network" };
     }
   });
