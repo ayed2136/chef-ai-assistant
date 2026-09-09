@@ -27,8 +27,7 @@ function validate(input: unknown): ChefInput {
 export const askChef = createServerFn({ method: "POST" })
   .inputValidator(validate)
   .handler(async ({ data }): Promise<{ ok: boolean; reply: string; reason?: string }> => {
-    const key = process.env["GROQ_API_KEY"];
-    console.log("chef: key present?", Boolean(key));
+    const key = process.env["LOVABLE_API_KEY"];
     if (!key) {
       return { ok: false, reply: "", reason: "missing_key" };
     }
@@ -44,14 +43,15 @@ export const askChef = createServerFn({ method: "POST" })
       : "";
 
     try {
-      const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
         method: "POST",
         headers: {
           "content-type": "application/json",
-          authorization: `Bearer ${key}`,
+          "Lovable-API-Key": key,
+          "X-Lovable-AIG-SDK": "fetch",
         },
         body: JSON.stringify({
-          model: "llama-3.3-70b-versatile",
+          model: "google/gemini-3.8-flash",
           temperature: 0.7,
           max_tokens: 900,
           messages: [{ role: "system", content: system + leftover }, ...data.messages],
@@ -61,10 +61,19 @@ export const askChef = createServerFn({ method: "POST" })
       if (!res.ok) {
         const status = res.status;
         const reason =
-          status === 401 ? "auth" : status === 429 ? "rate_limit" : status >= 500 ? "upstream" : "request";
-        console.log("chef: groq error", status, (await res.text()).slice(0, 300));
+          status === 401
+            ? "auth"
+            : status === 402
+              ? "credits"
+              : status === 429
+                ? "rate_limit"
+                : status >= 500
+                  ? "upstream"
+                  : "request";
+        console.log("chef: gateway error", status, (await res.text()).slice(0, 300));
         return { ok: false, reply: "", reason };
       }
+
 
       const json = (await res.json()) as {
         choices?: { message?: { content?: string } }[];

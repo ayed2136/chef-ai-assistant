@@ -38,8 +38,9 @@ export const T = {
   },
   clear: { en: "Clear chat", ar: "مسح المحادثة" },
   settingsBody: {
-    en: "Chef AI talks to Groq's Llama 3.3 70B from the server. The key is stored as a server secret and is never sent to the browser. A single public HTML file could not keep it safe — anyone could read it in page source.",
-    ar: "يتحدث شيف الذكاء إلى نموذج Llama 3.3 70B من الخادم. المفتاح محفوظ كسر على الخادم ولا يُرسل أبداً إلى المتصفح. ملف HTML عام واحد لا يمكنه حماية المفتاح — يستطيع أي شخص قراءته من مصدر الصفحة.",
+    en: "Chef AI runs its cooking brain on the server, so no key ever reaches the browser. A single public HTML file could not keep it safe — anyone could read it in page source.",
+    ar: "يعمل عقل الطهي في شيف الذكاء على الخادم، فلا يصل أي مفتاح إلى المتصفح. ملف HTML عام واحد لا يمكنه حماية المفتاح — يستطيع أي شخص قراءته من مصدر الصفحة.",
+
   },
   close: { en: "Close", ar: "إغلاق" },
   leftoverOn: {
