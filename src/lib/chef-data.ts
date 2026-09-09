@@ -167,6 +167,8 @@ export const FALLBACK_RECIPES: Recipe[] = [
   },
   {
     id: "bread-pudding",
+    category: "sweet",
+
     title: { en: "Stale Bread Pudding", ar: "حلوى الخبز القديم" },
     description: {
       en: "Dry bread, milk, eggs and sugar become a warm custard dessert.",
