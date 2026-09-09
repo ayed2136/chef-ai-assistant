@@ -302,7 +302,183 @@ export const FALLBACK_RECIPES: Recipe[] = [
     },
     leftoverFriendly: true,
   },
+  {
+    id: "basbousa",
+    category: "sweet",
+    title: { en: "Semolina Basbousa", ar: "بسبوسة بالسميد" },
+    description: {
+      en: "Soft semolina cake soaked in lemon syrup and topped with almonds.",
+      ar: "كيكة سميد طرية مسقية بشراب الليمون ومزينة باللوز.",
+    },
+    prepMinutes: 10,
+    cookMinutes: 30,
+    servings: 8,
+    tags: { en: ["Dessert", "Oven"], ar: ["حلويات", "فرن"] },
+    ingredients: {
+      en: [
+        "2 cups semolina",
+        "1 cup yogurt",
+        "3/4 cup sugar",
+        "1/2 cup melted butter",
+        "1 tsp baking powder",
+        "Syrup: 1 cup sugar, 1 cup water, squeeze of lemon",
+        "Almonds to decorate",
+      ],
+      ar: [
+        "كوبان سميد",
+        "كوب لبن زبادي",
+        "٣/٤ كوب سكر",
+        "نصف كوب زبدة مذابة",
+        "ملعقة بيكنج بودر",
+        "الشيرة: كوب سكر، كوب ماء، عصير ليمون",
+        "لوز للتزيين",
+      ],
+    },
+    steps: {
+      en: [
+        "Boil the syrup ingredients for 8 minutes, then cool.",
+        "Mix semolina, yogurt, sugar, butter and baking powder.",
+        "Spread in a tray, score into squares, press an almond on each.",
+        "Bake at 190°C for 30 minutes until golden.",
+        "Pour the cool syrup over the hot cake and rest 1 hour.",
+      ],
+      ar: [
+        "اغلِ مكونات الشيرة ٨ دقائق ثم بردها.",
+        "اخلط السميد واللبن والسكر والزبدة والبيكنج بودر.",
+        "افرد الخليط في صينية وقسّمه مربعات وضع لوزة على كل مربع.",
+        "اخبزها على ١٩٠ درجة لمدة ٣٠ دقيقة حتى تذهب.",
+        "اسكب الشيرة الباردة على الكيكة الساخنة واتركها ساعة.",
+      ],
+    },
+    leftoverFriendly: false,
+  },
+  {
+    id: "choco-mousse",
+    category: "sweet",
+    title: { en: "Three-Ingredient Chocolate Mousse", ar: "موس شوكولاتة بثلاث مكونات" },
+    description: {
+      en: "Dark chocolate whipped with cream into a glossy no-bake dessert.",
+      ar: "شوكولاتة داكنة مخفوقة مع الكريمة لحلوى لامعة بدون فرن.",
+    },
+    prepMinutes: 15,
+    cookMinutes: 0,
+    servings: 4,
+    tags: { en: ["Dessert", "No bake"], ar: ["حلويات", "بدون فرن"] },
+    ingredients: {
+      en: [
+        "200g dark chocolate",
+        "300ml cold whipping cream",
+        "2 tbsp sugar",
+        "Pinch of salt",
+      ],
+      ar: ["٢٠٠ غرام شوكولاتة داكنة", "٣٠٠ مل كريمة خفق باردة", "٢ ملعقة سكر", "رشة ملح"],
+    },
+    steps: {
+      en: [
+        "Melt the chocolate gently and let it cool slightly.",
+        "Whip the cream with sugar and salt to soft peaks.",
+        "Fold a third of the cream into the chocolate, then fold in the rest.",
+        "Spoon into glasses and chill 2 hours.",
+      ],
+      ar: [
+        "أذب الشوكولاتة برفق واتركها تبرد قليلاً.",
+        "اخفق الكريمة مع السكر والملح حتى القوام الطري.",
+        "اخلط ثلث الكريمة مع الشوكولاتة ثم أضف الباقي برفق.",
+        "وزّعه في أكواب وبرّده ساعتين.",
+      ],
+    },
+    leftoverFriendly: false,
+  },
+  {
+    id: "mint-lemonade",
+    category: "drink",
+    title: { en: "Frozen Mint Lemonade", ar: "ليمون بالنعناع المثلج" },
+    description: {
+      en: "Blended lemon, mint and ice — the fastest cure for a hot afternoon.",
+      ar: "ليمون ونعناع وثلج في الخلاط — أسرع علاج لعصر حار.",
+    },
+    prepMinutes: 5,
+    cookMinutes: 0,
+    servings: 4,
+    tags: { en: ["Drink", "No cook"], ar: ["مشروب", "بدون طبخ"] },
+    ingredients: {
+      en: [
+        "Juice of 4 lemons",
+        "1 cup fresh mint leaves",
+        "1/3 cup sugar or honey",
+        "3 cups cold water",
+        "3 cups ice",
+      ],
+      ar: [
+        "عصير ٤ ليمونات",
+        "كوب أوراق نعناع طازجة",
+        "ثلث كوب سكر أو عسل",
+        "٣ أكواب ماء بارد",
+        "٣ أكواب ثلج",
+      ],
+    },
+    steps: {
+      en: [
+        "Blend lemon juice, mint, sugar and water until smooth.",
+        "Add ice and blend again to a slush.",
+        "Taste and adjust sweetness, serve immediately with a mint sprig.",
+      ],
+      ar: [
+        "اخلط عصير الليمون والنعناع والسكر والماء حتى النعومة.",
+        "أضف الثلج واخلط مرة أخرى حتى يصبح مثلجاً.",
+        "عدّل الحلاوة وقدّمه فوراً مع غصن نعناع.",
+      ],
+    },
+    leftoverFriendly: false,
+  },
+  {
+    id: "spiced-karak",
+    category: "drink",
+    title: { en: "Spiced Karak Tea", ar: "شاي كرك بالبهارات" },
+    description: {
+      en: "Strong black tea simmered with cardamom, ginger and evaporated milk.",
+      ar: "شاي أسود قوي مغلي مع الهيل والزنجبيل والحليب المكثف.",
+    },
+    prepMinutes: 3,
+    cookMinutes: 10,
+    servings: 4,
+    tags: { en: ["Drink", "Warm"], ar: ["مشروب", "دافئ"] },
+    ingredients: {
+      en: [
+        "2 cups water",
+        "3 tsp strong black tea",
+        "4 cardamom pods, crushed",
+        "Small piece of ginger",
+        "1 cup evaporated or whole milk",
+        "Sugar to taste",
+      ],
+      ar: [
+        "كوبان ماء",
+        "٣ ملاعق شاي أسود قوي",
+        "٤ حبات هيل مهروسة",
+        "قطعة زنجبيل صغيرة",
+        "كوب حليب مكثف أو كامل الدسم",
+        "سكر حسب الرغبة",
+      ],
+    },
+    steps: {
+      en: [
+        "Boil water with cardamom and ginger for 3 minutes.",
+        "Add tea and simmer 3 minutes more.",
+        "Pour in the milk and sugar, bring back to a gentle boil.",
+        "Strain and serve hot in small glasses.",
+      ],
+      ar: [
+        "اغلِ الماء مع الهيل والزنجبيل ٣ دقائق.",
+        "أضف الشاي واتركه يغلي ٣ دقائق أخرى.",
+        "أضف الحليب والسكر وأعده للغليان الهادئ.",
+        "صفّه وقدّمه ساخناً في أكواب صغيرة.",
+      ],
+    },
+    leftoverFriendly: false,
+  },
 ];
+
 
 export function pickRandom(recipes: Recipe[], count: number, seed: number): Recipe[] {
   const pool = [...recipes];
