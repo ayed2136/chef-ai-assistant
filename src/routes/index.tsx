@@ -297,8 +297,9 @@ function ChefApp() {
 
       <footer className="border-t border-border py-6 text-center text-xs text-muted-foreground">
         {lang === "en"
-          ? "Chef AI · recipes powered by Llama 3.3 70B, with an offline cookbook for when the network sleeps."
-          : "شيف الذكاء · وصفات بدعم Llama 3.3 70B، مع دفتر طبخ يعمل دون اتصال."}
+          ? "Chef AI · live recipe ideas, with an offline cookbook for when the network sleeps."
+          : "شيف الذكاء · أفكار وصفات مباشرة، مع دفتر طبخ يعمل دون اتصال."}
+
       </footer>
 
       {showSettings && (
