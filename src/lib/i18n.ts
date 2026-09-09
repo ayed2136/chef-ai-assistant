@@ -47,6 +47,27 @@ export const T = {
     en: "Leftover Mode on: recipes rescue what's already cooked.",
     ar: "وضع البقايا مفعّل: وصفات تنقذ ما هو مطبوخ مسبقاً.",
   },
+  styleTitle: { en: "How do you want to cook it?", ar: "كيف تريد تحضيرها؟" },
+  styleAsk: { en: "Let Chef ask me", ar: "دع الشيف يسألني" },
+  styleScratch: { en: "From scratch", ar: "من الصفر" },
+  styleReady: { en: "Ready-made ingredients", ar: "مكونات جاهزة" },
+  styleAskHint: {
+    en: "Chef will ask first whether you want to cook from scratch or use ready-made products.",
+    ar: "سيسألك الشيف أولاً إن كنت تريد الطبخ من الصفر أم استخدام منتجات جاهزة.",
+  },
+  styleScratchHint: {
+    en: "Everything made by hand from raw ingredients.",
+    ar: "كل شيء يُحضّر يدوياً من مكونات خام.",
+  },
+  styleReadyHint: {
+    en: "Chef names the exact ready-made products to buy and how to use them.",
+    ar: "يذكر الشيف المنتجات الجاهزة التي تشتريها بالضبط وكيف تستخدمها.",
+  },
+  catAll: { en: "All", ar: "الكل" },
+  catFood: { en: "Food", ar: "أطباق" },
+  catSweet: { en: "Sweets", ar: "حلويات" },
+  catDrink: { en: "Drinks", ar: "مشروبات" },
+
 } as const;
 
 export function t(key: keyof typeof T, lang: Lang): string {
