@@ -2,10 +2,13 @@ import { createServerFn } from "@tanstack/react-start";
 
 type ChatTurn = { role: "user" | "assistant"; content: string };
 
+type CookStyle = "ask" | "scratch" | "ready";
+
 type ChefInput = {
   messages: ChatTurn[];
   lang: "en" | "ar";
   leftoverMode: boolean;
+  cookStyle: CookStyle;
 };
 
 function validate(input: unknown): ChefInput {
@@ -17,12 +20,16 @@ function validate(input: unknown): ChefInput {
     role: m.role === "assistant" ? ("assistant" as const) : ("user" as const),
     content: String(m.content ?? "").slice(0, 4000),
   }));
+  const cookStyle: CookStyle =
+    data.cookStyle === "scratch" ? "scratch" : data.cookStyle === "ready" ? "ready" : "ask";
   return {
     messages,
     lang: data.lang === "ar" ? "ar" : "en",
     leftoverMode: Boolean(data.leftoverMode),
+    cookStyle,
   };
 }
+
 
 export const askChef = createServerFn({ method: "POST" })
   .inputValidator(validate)
