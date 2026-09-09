@@ -1,7 +1,10 @@
 export type Lang = "en" | "ar";
 
+export type Category = "food" | "sweet" | "drink";
+
 export type Recipe = {
   id: string;
+  category?: Category;
   title: Record<Lang, string>;
   description: Record<Lang, string>;
   prepMinutes: number;
@@ -12,6 +15,7 @@ export type Recipe = {
   steps: Record<Lang, string[]>;
   leftoverFriendly: boolean;
 };
+
 
 export const FALLBACK_RECIPES: Recipe[] = [
   {
